@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>simple calculator</title>
+<style>
+label{
+background-color:pink;}
+label:hover{
+background-image:linear-gradient(yellow,pink);
+}
+input:hover{
+background-image:linear=gradient(pink,yellowgreen);
+border-radius:20%;
+}
+h1{
+background-image:linear-gradient(pink,yellow);
+}
+</style>
+</head>
+<body>
+<h1><marquee>CALCULATOR</marquee></h1>
+<script type="text/javascript">
+function add()
+{
+var x=document.getElementById("a").value;
+var y=document.getElementById("b").value;
+var first =parseFloat(x);
+var second =parseFloat(y);
+var sum;
+sum=first+second;
+document.getElementById("dis").value=sum;
+}
+function sub()
+{
+var x=document.getElementById("a").value;
+var y=document.getElementById("b").value;
+var first =parseFloat(x);
+var second =parseFloat(y);
+var sub;
+sub =first-second;
+document.getElementById("dis").value=sub;
+}
+function pro()
+{
+var x=document.getElementById("a").value;
+var y=document.getElementById("b").value;
+var first=parseFloat(x);
+var second =parseFloat(y);
+var pro;
+pro=first*second;
+document.getElementById("dis").value=pro;
+}
+function div()
+{
+var x=document.getElementById("a").value;
+var y=document.getElementById("b").value;
+var first=parseFloat(x);
+var second=parseFloat(y);
+var div;
+div=first/second;
+document.getElementById("dis").value=div;
+}
+function cls()
+{
+document.getElementById("a").value="";
+document.getElementById("b").value="";
+document.getElementById("dis").value="";
+}
+</script>
+<label>A:<input type="text" id="a"></label><br>
+<label>B:<input type="text" id="b"></label><br><br>
+<input type="text" id="dis"><br><br>
+
+<button onclick="add()">+</button>
+<button onclick="sub()">-</button>
+<button onclick="pro()">*</button>
+<button onclick="div()">/</button>
+<button onclick="cls()">Clear</button>
+</body>
+</html>
+
+

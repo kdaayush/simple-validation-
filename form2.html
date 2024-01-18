@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm" method="POST">
+      NAME <br>  <input type="text" id="name" name="name"><br>
+      EMAIL <br><input type="email" id="email" name="email"><br>
+      PASSWORD <br> <input type="password" id="pwd" name="pwd"><br>
+      CONFIRM PASSWORD <br><input type="password" id="confpwd" name="confpwd"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p class="error" id="error"></p><!--used clas id for color of error as you can see
+                                       in style tag -->
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            event.preventDefault();//used to prevent default action of an event 
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var pwd = document.getElementById("pwd").value;
+            var confpwd = document.getElementById("confpwd").value;
+
+            if(name === "" || email === "" || pwd === "" || confpwd === ""){
+                document.getElementById("error").innerHTML = "All fields are mandatory to be filled";
+            } else if(pwd !== confpwd){
+                document.getElementById("error").innerHTML = "Passwords do not match";
+            } else if(pwd.length <6){
+                document.getElementById("error").innerHTML = "Password should have at least 6 characters";
+            } 
+            else {
+                document.getElementById("error").innerHTML = "";
+                this.submit();
+            }
+        });
+    </script>
+</body>
+</html>
